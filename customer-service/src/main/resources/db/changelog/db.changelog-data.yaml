@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: seed-customers-table
+      author: edureka
+      changes:
+        - insert:
+            tableName: customers
+            columns:
+              - column:
+                  name: name
+                  value: "John Doe"
+              - column:
+                  name: email
+                  value: "john.doe@example.com"
+              - column:
+                  name: password
+                  value: "hashedpassword"

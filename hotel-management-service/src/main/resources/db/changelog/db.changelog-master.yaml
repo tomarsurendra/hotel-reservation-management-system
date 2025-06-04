@@ -1,0 +1,75 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-hotels-table
+      author: edureka
+      changes:
+        - createTable:
+            tableName: hotels
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: hotel_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+        - createTable:
+            tableName: rooms
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: room_number
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: room_status
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: hotel_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: room_type
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: seed-hotels-table
+      author: Anurag
+      changes:
+        - insert:
+            tableName: hotels
+            columns:
+              - column:
+                  name: hotel_name
+                  value: "AM Hotel Noida"
+        - insert:
+            tableName: rooms
+            columns:
+              - column:
+                  name: room_number
+                  value: 101
+              - column:
+                  name: room_status
+                  value: "AVAILABLE"
+              - column:
+                  name: room_type
+                  value: "DELUXE"
+              - column:
+                  name: hotel_id
+                  value: 1
